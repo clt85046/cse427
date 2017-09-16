@@ -1,0 +1,83 @@
+﻿Add your answers to Problems 1 and 2 to this file. 
+Don't forget to commit your answers when you are done!
+
+
+________________________________________________
+Problem 1(a)
+Because the reducer in WordCount is commutative and associative. To be more specific, for each key w in the Mapper output, the value associated with it is always 1. The key-list-of-value pairs after the merge and sort process is always (w, [1,1,1,…,1]). The order of these 1’s don’t matter to the outcome of Reducers. Therefore we can use the SumReducer as Combiner for this case. An example where the Reducer cannot be used as Combiner would be one that returns the probability of each letter’s occurrence in an article.
+
+
+
+________________________________________________
+Problem 1(b)
+Code for setting combiner: 
+job.setCombinerClass(SumReducer.class);
+
+Code for renaming job:
+job.setJobName(“Word Count with Combiner”);
+
+The result of the job execution remains the same with the original WordCount result.
+
+
+
+________________________________________________
+Problem 1(c)
+file：number of bytes read：
+WordCount with Combiner：1750998
+WordCount：20867492
+residual： 19116494
+
+HDFS：number of bytes read：
+WordCount with Combiner：5284706
+WordCount：5285706
+residual： 0
+
+file：number of bytes writen：
+WordCount with Combiner：3634216
+WordCount：32535423
+residual： 28901212
+
+HDFS： number of bytes writen：
+WordCount with Combiner：299379
+WordCount：299379
+residual： 0
+
+Map output records: 0
+
+Combine input records: -964,453
+
+Combine output records: -68,152
+
+Reduce input groups: 0
+
+Reduce input records: 896,301
+
+From the difference between the combiner input and output records in Word Counts with Combiner, there are 896,301 key-value pairs combined by the Combiner.
+
+
+
+________________________________________________
+Problem 1(d)
+CPU time spent (ms, without Combiner): 8,720
+CPU time spent (ms, with Combiner): 9,850
+Physical memory snapshot (bytes, without Combiner): 923,746,304
+Physical memory snapshot (bytes, with Combiner): 932,626,432
+Total time spent by all maps in occupied slots (ms, without Combiner): 49,791
+Total time spent by all maps in occupied slots (ms, with Combiner): 53,262
+
+I believe it is a good idea to use a Combiner for the WordCount problem. The use of a Combiner significantly reduced disk I/O, and intermediate records (as shown in Problem 1(c)), while only increased a relatively small amount of CPU time and memory usage (as shown above). 
+
+A case where the use of a Combiner is inevitable could be one with highly repetitive data while the process is commutative and associative. Like a MapReduce job that counts the occurrence of each letter in a book.
+
+The total time spent for the Mappers are higher when using a Combiner because Combiners run in map tasks.
+
+
+________________________________________________
+Problem 2(c)
+negative 805
+positive 405
+so,s=-0.3305  
+   p= 0.3347
+
+
+

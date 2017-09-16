@@ -1,0 +1,76 @@
+﻿Add your answers to Problem 1 to this file. 
+Don't forget to commit your answers when you are done!
+
+
+________________________________________________
+Problem 1(a)
+weblog contains a long list of HTTP GET requests from different IP addresses on different dates and times. testlog contains the first 5000 entries of weblog
+
+
+________________________________________________
+Problem 1(b)
+Mapper input: 
+(0, 10.223.157.186 - - [15/Jul/2009:21:24:17 -0700] "GET /assets/img/media.jpg HTTP/1.1" 200 110997)
+(1, 10.223.157.186 - - [15/Jul/2009:21:24:18 -0700] "GET /assets/img/pdf-icon.gif HTTP/1.1" 200 228)
+(2, 10.216.113.172 - - [16/Jul/2009:02:51:28 -0700] "GET / HTTP/1.1" 200 7616)
+(3, 10.216.113.172 - - [16/Jul/2009:02:51:29 -0700] "GET /assets/js/lowpro.js HTTP/1 .1" 200 10469)
+(4, 10.216.113.172 - - [16/Jul/2009:02:51:29 -0700] "GET /assets/css/reset.css HTTP/1.1" 200 1014)
+
+Mapper output:
+(10.223.157.186, 1)
+(10.223.157.186, 1)
+(10.216.113.172, 1)
+(10.216.113.172, 1)
+(10.216.113.172, 1)
+
+Reducer input:
+(10.216.113.172, [1, 1, 1])
+(10.223.157.186, [1, 1])
+
+Reducer output:
+(10.216.113.172, 3)
+(10.223.157.186, 2)
+
+The Reducer takes in key-list-of-value pairs, where each key is an IP address, and the list of value is a list of 1’s, each representing a hit from the corresponding IP address. The Reducer adds up all the 1’s in the list of value, and returns key-value pairs where the key remains to be each IP, and the corresponding value is the number of total hits from that IP. This Reducer performs the exact same task as the WordCount reducer.
+
+________________________________________________
+Problem 1(e)
+
+(i)
+Testing locally: 
+  I/O location: local filesystem
+  print statements: Eclipse console
+  job management: Java virtual machine
+Running on cluster:
+  I/O location: HDFS
+  print statements: command line terminal
+  job management: Hadoop
+
+(ii)
+hadoop jar ProcessLogs.jar stubs.ProcessLogs -fs=file:/// -jt=local testlog testlogoutput
+
+(iii)
+Personally, I prefer running in command line. Because (a) It is more convenient to pass in and check parameters — I don’t have to click on multiple buttons/tabs in order to do so, and (b) It feels more consistent with the way I execute jobs in HDFS.
+
+________________________________________________
+Problem 1(f)
+testlog contains 10 different IPs. Therefore, each testlog entry does contribute to a count.
+
+
+
+________________________________________________
+Problem 1(g)
+I have to make sure my program has passed all the unit test cases, and runs well on the pseudo cluster. And if I did any changes to the driver and/or configuration files during the testing, I’d have to change them so that my program can be run on the real cluster.
+
+
+
+________________________________________________
+Problem 1(h)
+There are 333,923 different IP addresses in total.
+10.1.100.199  35
+10.1.100.5  1
+10.99.99.58  21
+The results are globally sorted because there is only one Reducer.
+
+
+

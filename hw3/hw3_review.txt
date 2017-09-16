@@ -1,0 +1,5 @@
+Hw3 is much difficult than hw1 and 2.
+Problem 1 is easy to solve,we just need to change some code in wordcounts.
+Problem 2 is interesting,it is easy to solve in eclipse,but it confused me when I try to work it in command line and take me lots of time,at last I find that is because I have two driver file in a same file,testAvgWordLength and AvgWordLength.
+Problem 3 it is not hard to solve problem(a),but problem b is really difficult,i feel what we learn on class is not enough to solve the problem,after looking for data on the Internet and communicate with my partner,I solve the problem,but it really take lots of time.
+But however,i feel job like this,keep finding the problem in our programme is not a bring work,maybe a little bit interesting.

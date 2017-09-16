@@ -1,0 +1,7 @@
+A	Anchorage
+B	Boston
+C	Chicago
+D	Dallas
+E	Edmonton
+F	Fargo
+G	Glendale

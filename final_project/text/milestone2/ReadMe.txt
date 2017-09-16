@@ -1,0 +1,1 @@
+For pre-processing work,first use preprocessing.pig to filter files less than 50 words and add the title on each file.Then use wordcount.jave do the mapreduce job to finish perprocessing.

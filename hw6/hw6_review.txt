@@ -1,0 +1,3 @@
+Hw6 is easier to slove.May it is because the midterm.I feel really hard for the exam.
+For the problem 1,when i first say the output sequencefile,the first thing i thought is do I make a mistake,it is cannot read at all.But this is actually what we want,This really halpful for us to understand the knowledge learn on class.
+During these home work,I felt that test locally is really convinent,it is a very useful tool,Im glad to use that.

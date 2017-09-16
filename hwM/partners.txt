@@ -1,0 +1,5 @@
+
+
+% this file needs to include up to 2 wustlkeys in the first two lines (one line per wustlkey).
+% first line/wustlkey is the repository, where the solution is located!!
+% This exact same file needs to be in both partners repositories (indicating that partnerships are mutually accepted)!

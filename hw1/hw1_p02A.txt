@@ -1,0 +1,35 @@
+1. Programming experience: are you familiar with Java?
+ 
+ANS:No.
+
+2. Have you taken CSE 247 (former CSE 241)? 
+ANS:yes
+
+If not, are you familiar with the following concepts/algorithms:
+- Hashing
+- Sorting 
+
+ANS:yes
+
+3. Have you taken Math 309 or ESE 318 (not required but beneficial)? 
+
+ANS:yes.
+
+If not, are you familiar with the following concepts: 
+- Matrix multiplication
+- Probability
+
+
+
+
+4. Have you taken CSE 417A or CSE 517A (not required but beneficial)? 
+
+ANS:NO.
+
+If not, are you familiar with the following concepts: 
+- clustering (k-means algorithm)
+- classification (kNN, naive Bayes algorithms)
+ANS:no.
+
+5. What do you hope to get out of this class?
+ANS:I want to have a understand of cloud comptuing with big data.

@@ -1,0 +1,56 @@
+﻿Add your answers to the following Problems to this file. 
+Don't forget to commit your answers when you are done!
+
+Name:Chang Letian
+
+
+Problem 1 (a)
+Each entry of the output sequence files contains the position of the entry, followed by the key-value pair of the entry (the value being a whole line of text in the access log file). 10 files were created, 2 of which are _logs and _SUCCESS, and the 8 other files corresponds to the number of mappers Hadoop used for this job.
+
+
+________________________________________________
+Problem 1 (b)
+Each entry of the output sequence files contains the position of the entry, followed by the key-value pair of the entry (the value being a whole line of text in the access log file). The main difference between Snappy compressed and uncompressed files is that Snappy compressed files are a lot smaller than the uncompressed files. And if we try to read the sequence files with a regular text reader (like -cat), the Snappy compressed files are almost completely unreadable, while the uncompressed sequence files are still partially readable. The archived compression ratio is 4.26.
+
+
+________________________________________________
+Problem 1 (c)
+The output is a text file with each line containing the position of the entry, followed by the key-value pair of the entry (the value being a whole line of text in the access log file) — pretty much the same as the uncompressed and compressed sequence files. However, since it is a text file, it can be read from a text reader (-cat, for example).
+
+
+________________________________________________
+Problem 1 (d)
+hadoop jar CreateSequenceFileParameter.jar stubs.CreateSequenceFileParameter -Dmapred.output.compress=true -Dmapred.output.compress.codec=org.hadoop.io.compress.SnappyCodec -Dmapred.out.compression.type=BLOCK \ weblog sequencefilecompressedoutput
+
+
+
+________________________________________________
+________________________________________________
+Problem 2 (a)
+InputFormat could be KeyValueInputFormat. File names can be retrieved using the context.getInputSplit() method in the Mapper, and passed to the Reducer as part of the value.
+
+
+
+________________________________________________
+Problem 2 (c)
+(Have	hamlet@282)
+(heaven	hamlet@282)
+(and	hamlet@282)
+(earth	hamlet@282)
+(together	hamlet@282)
+(There	hamlet@133)
+(are	hamlet@133)
+(more	hamlet@133)
+(things	hamlet@133)
+(in	hamlet@133)
+(heaven	hamlet@133)
+(and	hamlet@133)
+(earth	hamlet@133)
+
+
+
+
+________________________________________________
+________________________________________________
+Problem 3 (b)
+Measuring only the co-occurrence of words directly next to each other is problematic because most useful combinations of co-occurring words are often farther away from each other. For example, “I like not only cats, but also dogs” and “I like only cats, not dogs” both have “I like” and “only cats” co-occurrence, but the two sentence show complete opposite attitude towards dogs. Therefore, if we are trying to do a sentiment analysis about people’s preference between cats and dogs, considering only words that are directly next to each other in these two sentences would probably give us a faulty output. We need to consider the whole context that the words are in. Using sentences as the minimum unit of splits is probably a better idea than using single words.

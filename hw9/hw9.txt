@@ -1,0 +1,43 @@
+Add your answers to the following Problems to this file. 
+Don't forget to commit your answers when you are done!
+
+Name:changletian tanliuyuan
+
+Problem 1 (a)103701	Ferris Bueller's Day Off
+             95216	Rain Man
+             94398	Seven
+             92377	The Godfather
+             92029	The Incredibles
+             90891	Pretty Woman
+             88670	As Good as It Gets
+             82862	The Italian Job
+             81889	Terminator 2: Extreme Edition
+             80580	Good Morning
+             78936	When Harry Met Sally
+             78892	National Lampoon's Vacation
+             76587	Beverly Hills Cop
+             76473	Office Space
+             75145	Air Force One
+
+Problem 1 (b)
+
+
+overly enthusiastic: 0.12
+overly pessimistic: 0.00248
+
+We can set thresholds on the average rating of users, and filter out those overly enthusiastic or overly pessimistic users.
+
+
+
+Problem 2 (a)
+(see hw9_p2a.pdf)
+
+Problem 2 (b)
+Benefit of Pearson correlation: Normalizing the data would bring better alignment to the probability distribution of the whole dataset, which would result in better accuracy in the outcome. For example, Pearson correlation would eliminate users who give the same rate to every single item, which would make the outcome better because those users’ opinions are not informative.
+
+Disadvantage of Pearson correlation:It is much more computationally expensive, because calculating the average would mean going through the entire dataset prior to analyzing any data point.
+
+Problem 2 (c)
+
+Jaccard distance ignores the value of ratings. If two users rated the exact same items, but their ratings are extremely different in values, they would have a Jaccard distance of 1, while in fact they were not similar users.
+A way of overcoming this problem would be, if the difference between two users’ ratings for an item exceeds a certain threshold, drop this item from the set of items that are commonly rated by both users.

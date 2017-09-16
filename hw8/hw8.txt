@@ -1,0 +1,129 @@
+Add your answers to the following Problems to this file. 
+Don't forget to commit your answers when you are done!
+
+Name:tanliuyuan
+
+£¬
+
+changletian
+
+
+Problem 1 (a)need  order_dtm.
+             do not use pig:
+
+
+
+hadoop fs -cat /dualcore/order/part* |head -100 > sample.txt
+
+             use pig:
+                     everything = LOAD '/dualcore/order'; 
+                     subset = SAMPLE everything 0.05; 
+                     STORE subset INTO 'sample'; 
+
+Problem 1 (c)£¨2013-02,76170£©
+             £¨2013-03,84549£©
+             £¨2013-03,87853£©
+             £¨2013-05,115038£©£¬so it leads to a increse in MAY.
+
+
+Problem 2 (a)
+
+
+
+product_id and order_dtm are needed. First,we should take small data as sample.
+
+
+Problem 2 (b)When the dataset we need are in two files and have some dataser same.
+
+Problem 2 (d)
+
+
+
+£¨2013-02,3598£©
+             £¨2013-03,3904£©
+             £¨2013-03,4134£©
+             £¨2013-05,49514£©,the data show an incease in sales of the advertised product corresponding to the month in which Dualcore`s campaign was active.
+
+Problem 3 (a)
+
+
+
+order_dtm,order_id,cust_id,price are needed.  
+
+Problem 3 (c)
+
+
+
+silver:736
+             gold:331
+             platinum:109
+
+Problem 4 (a)
+
+
+
+find $ADIR/data/cscalls -name *.mp3 > call_list.txt
+
+
+Problem 4 (c)
+
+
+
+DEFINE tagreader `readtags.py` SHIP('readtags.py')
+             Backticks used to quote script name following the alias 
+             Single quotes used for quoting script name within SHIP
+
+Problem 4 (d)
+
+
+
+We can use a sample to test.
+             Command£ºpig -x local -param date	=2013-04 extract_metadata.pig
+                TOP3: (BILLING,16) (TECH_SUPPORT,14)(SHIPPING_DELAY,1)
+
+Problem 4 (e)TOP3:(BILLING,22) (TECH_SUPPORT,24)(SHIPPING_DELAY,116)
+             SHIPPING_DELAY increase significantly
+
+Problem 5 (a)exclude customers who live within two-day delivery area and ALaska and Hawaii.Find the left customers who have orders during the ad campaign`s zip code with latitude and longitude.
+
+
+Problem 5 (d)
+
+
+
+
+(02118,1059.3379591467183)
+             (63139,423.01945102918006)
+             (78237,955.8300496917677)
+              so,the zip code 63139 has the lowest average distance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

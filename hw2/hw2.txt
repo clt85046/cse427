@@ -1,0 +1,98 @@
+Add your answers to Problems 1-3 to this file. 
+Don't forget to commit your answers when you are done!
+
+
+________________________________________________
+Problem 1(a)
+Command: hadoop fs -ls shakespeare
+Result:
+Found 4 items
+-rw-r--r--   1 training supergroup    1784616 2016-01-25 19:12 shakespeare/comedies
+-rw-r--r--   1 training supergroup    1479035 2016-01-25 19:12 shakespeare/histories
+-rw-r--r--   1 training supergroup     268140 2016-01-25 19:12 shakespeare/poems
+-rw-r--r--   1 training supergroup    1752440 2016-01-25 19:12 shakespeare/tragedies
+
+
+
+________________________________________________
+Problem 1(b)
+Command: hadoop fs -cat shakespeare/poems | head -n 16
+Result:
+
+
+
+	SONNETS
+
+
+
+TO THE ONLY BEGETTER OF
+THESE INSUING SONNETS
+MR. W. H. ALL HAPPINESS
+AND THAT ETERNITY
+PROMISED BY
+OUR EVER-LIVING POET WISHETH
+THE WELL-WISHING
+ADVENTURER IN
+SETTING FORTH
+
+
+
+________________________________________________
+Problem 1(c)
+There could be multiple solutions. One of them could be as below (Assuming RA:N1 N2, RB:N3 N4, RC:N5 N6):
+/path/to/data/file: B1, B2, B3, B4, B5
+location of each block:B1:N1 N3
+                       B2:N2 N5
+                       B3:N4 N6
+                       B4:N1 N4
+                       B5:N2 N6
+
+
+
+________________________________________________
+________________________________________________
+Problem 2(a)
+• ADRIANO: 111
+• Whether: 41
+• love: 144
+• loves: 4
+• the: 25578
+• whether: 79
+• we: 2922
+• zodiac: 1
+
+
+
+
+________________________________________________
+Problem 2(b)
+Number of different words: 29183
+Command: hadoop fs -cat wordcounts/part-r-00000 | wc -l
+
+
+
+________________________________________________
+Problem 2(c)
+To improve efficiency, make the algorithm case-insensitive. For instance, “Happy” and “happy” essentially reflect the same emotion/opinion. We don’t really care about whether the letter “H” is in upper or lower case, and yet the two patterns are counted as separate words in our word-count program.
+To improve quality, consider not only the individual words, but also the actual context of the word. For instance, if a seemingly positive word is put in a relatively negative context, it is likely to be used sarcastically, and therefore it should be considered to show negative sentiment, not positive.
+
+
+
+________________________________________________
+Problem 2(d)
+In our word-count program, we take a text file as input, and pass it to the Mapper after RecordReader processes it. Since the Mapper takes key-value pairs as input, it is reasonable to believe that the function of RecordReader is to take the original input data, and break it into key-value pairs with the proper data type that the Mapper can handle. So the input of the RecordReader would be whatever data we want MapReduce to deal with, and the output would be key-value pairs that match the Mapper’s input requirement.
+
+
+
+
+________________________________________________
+________________________________________________
+Problem 3(a)
+Yes. Since different words may have very significant difference in their occurrence, different Reduce Tasks may have significant difference in execution time, depending on what keys they end up taking.
+
+
+
+________________________________________________
+Problem 3(b)
+Both cases would lessen the impact of skew in Reduce Tasks. With small amount (10, in this case) of tasks, there will be a good averaging in the distribution of keys. With very large amount (way larger than the number of worker nodes, 10000, in this case) of Reduce Tasks, we may let long Reduce Tasks occupy a full worker node, and let several shorter Reduce Tasks run sequentially on the same node, and thus reduce the impact of skew. As a matter of fact, 10000 tasks may further reduce skew compared to 10 tasks.
+

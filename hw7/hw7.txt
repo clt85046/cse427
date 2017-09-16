@@ -1,0 +1,41 @@
+Add your answers to the following Problems to this file. 
+Don't forget to commit your answers when you are done!
+
+Name:Letian Chang,Liuyuan Tan
+Problem 1 (a)
+
+
+
+hadoop fs -cat dualcore/ad_data1/part* |head -100 > test_ad_data.txt
+
+
+Problem 1 (b)
+First of all, testing with a local subset reduces the use of large dataset in the cloud, which saves a lot of time and system resources.
+
+
+Problem 1 (c)displayed:(diskcentral.example.com,68)
+                       (megawave.example.com,96)
+                       (megasource.example.com,100)
+                       (salestiger.example.com,141)
+
+
+Problem 1 (d)displayed:(bassoonenthusiast.example.com,1246)
+                       (grillingtips.example.com,4800)
+                       (footwear.example.com,4898)
+                       (coffenews.example.com,5106) 
+
+
+
+Problem 2 (b)(PRESENT,165606)
+             (TABLET,106509)
+             (DUALCORE,95124)
+
+Problem 3 (b)18243
+
+
+Problem 4 (b)
+
+
+
+8000000
+

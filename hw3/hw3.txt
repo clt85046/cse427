@@ -1,0 +1,84 @@
+Add your answers to Problems 1 and 3 to this file. 
+Don't forget to commit your answers when you are done!
+
+______________________________________________
+Problem 1(a)
+Mapper output:
+(N,2)
+(n,3)
+(i,2)
+(d,10)
+(n,3)
+(t,3)
+(b,4)
+(t,4)
+
+Reducer input:
+(N,2)
+(n,3)
+(i,2)
+(d,10)
+(n,3)
+(t,3)
+(b,4)
+(t,(3,4))
+
+________________________________________________
+Problem 1(c)
+A 3.8913
+W 4.4640
+a 3.0776
+t 3.7332
+z 4.6727
+
+
+
+
+________________________________________________
+________________________________________________
+Problem 3(a)
+After modifying the Driver, we are able to pass in the caseSensitive parameter through command line using the -D option. However, no matter how the parameter is set, we always get the same result:
+N 4.0
+b 4.0
+d 10.0
+i 2.0
+n 3.0
+t 3.5
+It makes no actual difference to the job execution, since the Mapper doesn’t know what to do with the parameter yet.
+
+
+
+________________________________________________
+Problem 3(b)
+After modifying LetterMapper, we are able to pass in the caseSensitive parameter through command line using the -D option, and the MapReduce task acts differently according to the configuration. When caseSensitive=false, the result is:
+b 4.0
+d 10.0
+i 2.0
+n 2.6667
+t 3.5
+Now it makes a difference in the job execution because the Mapper knows to behave accordingly after the Driver takes in the parameter
+
+
+
+________________________________________________
+Problem 3(c)
+Command:
+hadoop jar awltool.jar stubs.AvgWordLength -D caseSensitive=false shakespeare test5
+
+result:
+a 3.2758
+w 4.3730
+z 5.0533
+
+The order of the command line inputs matter. You cannot put -D after the input and output directories.
+
+________________________________________________
+Problem 3(d)
+Another way of passing parameter is via a xml configuration file. The Driver needs to be modified. The below codes should do the trick:
+
+Configuration cons = new Configuration();
+conf.addResource(“configuration.xml”);
+
+Overall, I like passing parameters through command line, because it’s more versatile. However, if there are a lot parameters, an xml file does come in handy.
+
+

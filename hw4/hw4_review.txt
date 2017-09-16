@@ -1,0 +1,2 @@
+I feel hw4 is not very difficult,excepet problem 2(b).The other problems are not very hard to work out with the help of the slides.At first,I want to configure the DistributeCache on the java program, but as the slides said,it is really difficult,so I turn to the toolrunner and command line,that`s much easier.
+At first,I misunderstood the mean of Problem 2b,I thought it asked us test the distributedcache and partitioner together and it confused me and I spend lots of time on it.Finally I realize the problem is aske d us to test the partitioner, this is not hard to work out.

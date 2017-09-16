@@ -1,0 +1,12 @@
+1	Alice	B
+2	Bob D
+3	Carlos	F
+4	Dieter	A
+5	Etienne	F
+6	Fredo	C
+7	George	A
+8	Hannah	B
+9	Irina	C
+10	Jack
+11	Kim	A
+12	Lucas	D

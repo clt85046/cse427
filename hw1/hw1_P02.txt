@@ -1,0 +1,47 @@
+If you're seeing this file then you have successfully checked out your repository. Please take a few minutes to answer the following questions (write YES or NO below the questions, provide a list when appropriate).
+
+Don't forget to commit your answers when you are done!
+
+Name:
+Major:
+
+IMPORTANT: By committing hw1_P02 you confirm, that you have read and understood 
+the policies and grading procedure of CSE427s. The course policies and 
+grading procedure can be found here: 
+http://sites.wustl.edu/neumann/courses/spring-2016/cse-427/policies/
+
+1. Programming experience: are you familiar with Java?
+ 
+
+
+2. Have you taken CSE 247 (former CSE 241)? 
+
+If not, are you familiar with the following concepts/algorithms:
+- Hashing
+- Sorting 
+
+
+
+3. Have you taken Math 309 or ESE 318 (not required but beneficial)? 
+
+If not, are you familiar with the following concepts: 
+- Matrix multiplication
+- Probability
+
+
+
+
+4. Have you taken CSE 417A or CSE 517A (not required but beneficial)? 
+
+If not, are you familiar with the following concepts: 
+- clustering (k-means algorithm)
+- classification (kNN, naive Bayes algorithms)
+
+
+5. What do you hope to get out of this class?
+
+
+
+
+
+
